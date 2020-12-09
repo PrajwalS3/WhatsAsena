@@ -13,12 +13,12 @@ const {MessageType} = require('@adiwajshing/baileys');
 const Language = require('../language');
 const Lang = Language.getString('_asena');
 
-Asena.addCommand({pattern: 'asena ?(.*)', fromMe: true, dontAddCommandList: true}, (async (message, match) => {
+Asena.addCommand({pattern: 'help ?(.*)', fromMe: true, dontAddCommandList: true}, (async (message, match) => {
     var CMD_HELP = '';
     if (match[1] === '') {
         Asena.commands.map(
             async (command) =>  {
-                if (command.dontAddCommandList || command.pattern === undefined) return;
+                if (command.dontAddCommandList || command.pattern === undefined) return;
                 try {
                     var match = command.pattern.toString().match(/(\W*)([A-Za-zğüşiöç]*)/);
                 } catch {
@@ -45,7 +45,7 @@ Asena.addCommand({pattern: 'asena ?(.*)', fromMe: true, dontAddCommandList: true
         var CMD_HELP = '';
         Asena.commands.map(
             async (command) =>  {
-                if (command.dontAddCommandList || command.pattern === undefined) return;
+                if (command.dontAddCommandList || command.pattern === undefined) return;
                 try {
                     var cmatch = command.pattern.toString().match(/(\W*)([A-Za-zğüşiöç]*)/);
                 } catch {
